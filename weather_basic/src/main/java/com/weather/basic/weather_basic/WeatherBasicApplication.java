@@ -1,13 +1,13 @@
-package com.example.demo;
+package com.weather.basic.weather_basic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class WeatherBasicApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(WeatherBasicApplication.class, args);
 	}
 
 }
