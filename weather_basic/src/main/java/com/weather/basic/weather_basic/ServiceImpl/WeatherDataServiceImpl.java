@@ -56,6 +56,12 @@ public class WeatherDataServiceImpl implements WeatherDataService {
         return getWeatherData(uri,weatherResponse);
     }
 
+    @Override
+    public void syncWeatherData(String wId) {
+        String uri = WEATHER_DATA_URI + "citykey=" +  wId;
+        saveDataToRedis(uri);
+    }
+
     private WeatherResponse getWeatherData(String uri,WeatherResponse weatherResponse){
         //是否先查缓存，若缓存不存在通过httpclient调用第三方信息
         String key = uri;
@@ -84,9 +90,19 @@ public class WeatherDataServiceImpl implements WeatherDataService {
         return weatherResponse;
     }
 
+
     private boolean isNull(String thing){
         if(thing == null)
             return true;
         return false;
+    }
+    private void saveDataToRedis(String uri){
+        String jsonData = null;
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(uri,String.class);
+        if(responseEntity.getStatusCodeValue() == 200){
+            jsonData = responseEntity.getBody();
+        }
+        //将数据保存在redis中
+        stringRedisTemplate.opsForValue().set(uri,jsonData,30,TimeUnit.MINUTES);
     }
 }

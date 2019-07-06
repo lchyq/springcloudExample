@@ -25,7 +25,7 @@ public class QuartzConfiguration {
     public Trigger weatherTrigger(){
         //创建一个周期器
         SimpleScheduleBuilder simpleScheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
-                .withIntervalInSeconds(2).repeatForever();
+                .withIntervalInSeconds(1800).repeatForever();
         //触发器根据周期器来周期的执行任务
         return TriggerBuilder.newTrigger().forJob(weatherJobDetail()).withIdentity("weatherTrigger")
                 .withSchedule(simpleScheduleBuilder)

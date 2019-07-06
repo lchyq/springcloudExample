@@ -15,4 +15,9 @@ public interface WeatherDataService {
      * 根据天气名称获取天气信息
      */
     WeatherResponse getWeatherDataByName(String wName);
+
+    /**
+     * 同步天气信息服务
+     */
+    void syncWeatherData(String wId);
 }
