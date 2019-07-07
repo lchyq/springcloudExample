@@ -21,7 +21,7 @@ public class CityDataServiceImpl implements CityDataService {
         //获取类路径下city.xml文件
         Resource resource =  new ClassPathResource("city.xml");
         //读取数据流，并转化为二进制流
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(resource.getInputStream()));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(resource.getInputStream(),"utf-8"));
         StringBuilder stringBuilder = new StringBuilder();
         String line = "";
         while ((line = bufferedReader.readLine()) != null){
