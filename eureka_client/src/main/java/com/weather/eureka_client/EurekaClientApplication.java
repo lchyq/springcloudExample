@@ -1,15 +1,16 @@
-package com.weather.city_weather_data;
+package com.weather.eureka_client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CityWeatherDataApplication {
+public class EurekaClientApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CityWeatherDataApplication.class, args);
+		SpringApplication.run(EurekaClientApplication.class, args);
 	}
 
 }
