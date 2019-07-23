@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.weather</groupId>
-	<artifactId>city_weather_data</artifactId>
+	<artifactId>feign</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>city_weather_data</name>
+	<name>feign</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -26,21 +26,14 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<!--springcloud starter-->
-		<dependency>
-		<groupId>org.springframework.cloud</groupId>
-		<artifactId>spring-cloud-starter</artifactId>
-	</dependency>
-
-		<!--eureka_client-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
 		<!--feign-->
@@ -50,6 +43,11 @@
 			<!--<version>2.0.2.RELEASE</version>-->
 		</dependency>
 
+		<!--eureka_client-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

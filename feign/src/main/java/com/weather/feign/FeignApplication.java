@@ -1,4 +1,4 @@
-package com.weather.city_weather_data;
+package com.weather.feign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,12 +6,12 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients
 @EnableDiscoveryClient
-//@EnableFeignClients
-public class CityWeatherDataApplication {
+public class FeignApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CityWeatherDataApplication.class, args);
+		SpringApplication.run(FeignApplication.class, args);
 	}
 
 }
