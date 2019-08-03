@@ -58,6 +58,38 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 			<version>2.0.4.RELEASE</version>
 		</dependency>
+
+		<!--若想切换spring默认的数据源，需要先排除jdbc-starter中的默认数据源
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<exclusions>
+		<exclusion>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+		</exclusion>
+	</exclusions>
+</dependency>
+		-->
+		<!--
+		# 添加HikariCP数据源
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+		</dependency>
+		或者
+		# commons-dbcp 数据源
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+		</dependency>
+		或者
+		# commons-dbcp2数据源
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+		</dependency>
+		-->
 	</dependencies>
 
 	<build>
